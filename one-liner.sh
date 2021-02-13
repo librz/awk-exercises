@@ -14,14 +14,14 @@ echo -e "blabla\nfirst record\nsecond record" | awk 'NR>1{print}'
 # single FS
 echo -e "PatrickXLisaXHellen" | awk -F'X' '{print $1, $2, $3}'
 
-# multiple FS using array 
+# multiple FS using array
 echo -e "PatrcikXLisa\tHellen" | awk -F'[X\t]' '{print $1, $2, $3}'
 
 # multiple FS using regex
 echo -e "PatrickXLisa\t  Hellen    Joe" | awk -F'X|[ \t]*' '{print $1, $2, $3, $4}'
 
 # using variable to set RS
-echo $PATH | awk -v RS=":" '{print $1}'
+echo "$PATH" | awk -v RS=":" '{print $1}'
 
 # create non-builtin variable 
 echo -e "Patrick\nLisa\nLily" | awk -v pattern="^Li" '$1 ~ pattern {print $1}'
@@ -29,3 +29,8 @@ echo -e "Patrick\nLisa\nLily" | awk -v pattern="^Li" '$1 ~ pattern {print $1}'
 # using tolower func to ignore case
 echo -e "Patrick\nLisa\nLily" | awk 'tolower($1) ~ /^li/ {print $1}'
 
+# calculating sum
+echo -e "10\n20\n15\n64" | awk 'BEGIN{sum=0} {sum+=$1} END{print sum}'
+
+# formatting using printf 
+echo -e "Name\tAge\nMason Jobs\t20\nLisa Williams\t29" | awk -F"\t" '{ printf("%-20s%-10s\n", $1,$2) }'
