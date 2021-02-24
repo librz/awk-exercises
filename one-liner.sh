@@ -34,3 +34,6 @@ echo -e "10\n20\n15\n64" | awk 'BEGIN{sum=0} {sum+=$1} END{print sum}'
 
 # formatting using printf 
 echo -e "Name\tAge\nMason Jobs\t20\nLisa Williams\t29" | awk -F"\t" '{ printf("%-20s%-10s\n", $1,$2) }'
+
+# print line 2 to line 5
+echo -e "line one\nline two\nline three\nline four\nline five\nline six\nline seven" | awk 'NR>=2 && NR<=5 {print}'
