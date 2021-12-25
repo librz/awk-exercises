@@ -5,10 +5,10 @@ echo -e "hello there my\t\t\tfriend" | awk '{print}'
 echo -e "hello there my\t\t\tfriend" | awk '{print $0}'
 echo -e "hello there my\t\t\tfriend" | awk '{print $1, $2, $3, $4}'
 
-# using NF
+# using NF (to print last field)
 echo -e "Patrick Lisa Hellen\nJoe Steve\nMike Lily Kate Nate" | awk '{print $NF}'
 
-# using NR
+# using NR (as condition)
 echo -e "blabla\nfirst record\nsecond record" | awk 'NR>1{print}'
 
 # single FS
