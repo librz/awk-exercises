@@ -1,4 +1,4 @@
-#### remove empty lines
+### remove empty lines
 
 suppose the input is as follows
 
@@ -24,7 +24,7 @@ solution
 echo -e "line 1\n\nline 3\n\nline 5" | awk '$0 {print}'
 ```
 
-#### get a list of all local git branches in one line (seperate each branch with a space)
+### get a list of all local git branches in one line (seperate each branch with a space)
 
 support `git branch` gives the following output
 
