@@ -43,8 +43,8 @@ support `git branch` gives the following output
 solution
 
 ```sh
-# 1. remove the * sign of current branch & remove whitespaces for each line
 git branch | 
+# 1. remove the * sign of current branch & remove whitespaces for each line
 awk '{ 
 if ($1 ~ /[^\*]/) 
   print $1;
@@ -54,4 +54,6 @@ else
 # 2. set ORS(output record seperator to space instead of newline)
 awk -v ORS=' ' '{print}'
 ```
+
+*this could be useful if you want delete a lot of local git branches in one go using `git branch -D`*
 
